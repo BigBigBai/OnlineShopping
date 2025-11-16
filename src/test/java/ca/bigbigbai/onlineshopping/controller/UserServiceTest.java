@@ -29,7 +29,7 @@ class UserServiceTest {
     }
 
     @Test
-    void addMock() {
+    void add5Mock() {
         when(mockAddService.add(anyInt(), anyInt())).thenReturn(100);
         userService = new UserService(mockAddService);
         int res = userService.add5(1,2);
@@ -37,7 +37,7 @@ class UserServiceTest {
     }
 
     @Test
-    void addReal() {
+    void add5Real() {
         int res = userService.add5(1,2);
         assertEquals(8, res);
     }

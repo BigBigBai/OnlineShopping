@@ -14,7 +14,7 @@ public class HelloController {
 
     @GetMapping("/echo/{text}")
     public String echo(@PathVariable("text") String text) {
-        return "Hello, you just input: " + text;
+        return "Hello " + text;
     }
 
 
