@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
+
     @GetMapping
     public String helloWorld() {
         return "Hello World";
@@ -15,4 +16,6 @@ public class HelloController {
     public String echo(@PathVariable("text") String text) {
         return "Hello, you just input: " + text;
     }
+
+
 }
