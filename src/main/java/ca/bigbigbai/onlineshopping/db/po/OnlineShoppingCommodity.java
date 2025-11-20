@@ -1,5 +1,12 @@
 package ca.bigbigbai.onlineshopping.db.po;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+@AllArgsConstructor
 public class OnlineShoppingCommodity {
     private Long commodityId;
 
