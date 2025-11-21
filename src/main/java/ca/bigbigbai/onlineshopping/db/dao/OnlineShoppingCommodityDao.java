@@ -8,4 +8,5 @@ public interface OnlineShoppingCommodityDao {
     int insertCommodity(OnlineShoppingCommodity commodity);
     OnlineShoppingCommodity selectCommodity(long commodityId);
     List<OnlineShoppingCommodity> listCommoditiesByUserId(Long userId);
+    int updateCommodity(OnlineShoppingCommodity commodity);
 }

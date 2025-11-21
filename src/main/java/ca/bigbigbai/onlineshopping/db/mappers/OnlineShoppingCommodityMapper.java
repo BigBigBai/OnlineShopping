@@ -19,4 +19,5 @@ public interface OnlineShoppingCommodityMapper {
 
 
     List<OnlineShoppingCommodity> listCommoditiesByUserId(Long userId);
+
 }
