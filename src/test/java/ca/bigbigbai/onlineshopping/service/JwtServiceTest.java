@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 public class JwtServiceTest {
     @Autowired
@@ -15,6 +17,7 @@ public class JwtServiceTest {
 
     @BeforeEach
     public void setUp() {
+        // 创建测试用户
         testUser = UserModel.builder()
                 .id(1)
                 .name("张三")
@@ -23,12 +26,17 @@ public class JwtServiceTest {
     }
 
     @Test
-    public void testEncryptUser_ShouldReturnValidToken() {
+    public void testEncryptUser_ShouldReturnValidJwtToken() {
         // 测试加密功能 - 应该返回有效的JWT token
+        String token = jwtService.encryptUser(testUser);
 
         // 验证token不为空
+        assertNotNull(token, "加密后的token不应该为null");
+        assertFalse(token.isEmpty(), "加密后的token不应该为空字符串");
 
         // 验证token的格式（JWT token应该有三部分，用.分隔）
+        String[] parts = token.split("\\.");
+        assertEquals(3, parts.length, "JWT token应该包含3个部分(header,payload,signature)");
 
     }
 
