@@ -53,13 +53,13 @@ public class HelloControllerTest {
     void testHelloEndpoint() throws Exception {
         mockMvc.perform((get("/")))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello World"));
+                .andExpect(content().string("Hello World with Get"));
     }
 
     // 测试 helloWord() 方法
     @Test
     void testHelloWorld() {
         String res = helloController.helloGet();
-        assertEquals("Hello World", res);
+        assertEquals("Hello World with Get", res);
     }
 }
