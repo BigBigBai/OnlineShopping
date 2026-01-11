@@ -33,3 +33,5 @@ build/
 .vscode/
 
 onlineshopping_08-app.tar
+
+.DS_Store
